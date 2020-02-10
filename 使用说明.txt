@@ -1,0 +1,71 @@
+package.json中包含了所有要下载的工具
+npm install 按照package.json来下载所有工具
+因为要下载的工具多， 这个时间一般比较长
+
+config/index.js 文件指定了npm run build打包出来的文件的存放位置
+这里指定位置为：../IrisAdminApi/resources/
+
+npm run build生成的文件如下：
+$ find ../IrisAdminApi/resources/
+../IrisAdminApi/resources/
+../IrisAdminApi/resources/index.html
+../IrisAdminApi/resources/static
+../IrisAdminApi/resources/static/css
+../IrisAdminApi/resources/static/css/app.5916f702e139bfa1ab6b50b24cdd159f.css
+../IrisAdminApi/resources/static/css/app.5916f702e139bfa1ab6b50b24cdd159f.css.map
+../IrisAdminApi/resources/static/fonts
+../IrisAdminApi/resources/static/fonts/element-icons.535877f.woff
+../IrisAdminApi/resources/static/fonts/element-icons.732389d.ttf
+../IrisAdminApi/resources/static/fonts/fontawesome-webfont.674f50d.eot
+../IrisAdminApi/resources/static/fonts/fontawesome-webfont.af7ae50.woff2
+../IrisAdminApi/resources/static/fonts/fontawesome-webfont.b06871f.ttf
+../IrisAdminApi/resources/static/fonts/fontawesome-webfont.fee66e7.woff
+../IrisAdminApi/resources/static/img
+../IrisAdminApi/resources/static/img/fontawesome-webfont.acf3dcb.svg
+../IrisAdminApi/resources/static/img/index-head.3569fb2.png
+../IrisAdminApi/resources/static/img/logo_top.22be8a5.png
+../IrisAdminApi/resources/static/js
+../IrisAdminApi/resources/static/js/app.ea10af783a7f47907129.js
+../IrisAdminApi/resources/static/js/app.ea10af783a7f47907129.js.map
+../IrisAdminApi/resources/static/js/manifest.2ae2e69a05c33dfc65f8.js
+../IrisAdminApi/resources/static/js/manifest.2ae2e69a05c33dfc65f8.js.map
+../IrisAdminApi/resources/static/js/vendor.c19c679480ce43275907.js
+../IrisAdminApi/resources/static/js/vendor.c19c679480ce43275907.js.map
+
+
+------------------------
+看下npm run build的过程：
+$ npm run build
+
+> linka-admin@1.0.0 build E:\web-front\vueapiadmin
+> node build/build.js
+
+Hash: 42a86da7288314b4076c
+Version: webpack 3.12.0
+Time: 41693ms
+                                                  Asset       Size  Chunks                    Chunk Names
+             static/img/fontawesome-webfont.acf3dcb.svg     447 kB          [emitted]  [big]
+           static/fonts/fontawesome-webfont.674f50d.eot     166 kB          [emitted]
+           static/fonts/fontawesome-webfont.b06871f.ttf     166 kB          [emitted]
+         static/fonts/fontawesome-webfont.af7ae50.woff2    77.2 kB          [emitted]
+          static/fonts/fontawesome-webfont.fee66e7.woff      98 kB          [emitted]
+                static/fonts/element-icons.535877f.woff    28.2 kB          [emitted]
+                 static/fonts/element-icons.732389d.ttf      56 kB          [emitted]
+                        static/img/logo_top.22be8a5.png    25.5 kB          [emitted]
+                      static/img/index-head.3569fb2.png    18.3 kB          [emitted]
+               static/js/vendor.c19c679480ce43275907.js     958 kB       0  [emitted]  [big]  vendor
+                  static/js/app.ea10af783a7f47907129.js    48.6 kB       1  [emitted]         app
+             static/js/manifest.2ae2e69a05c33dfc65f8.js  857 bytes       2  [emitted]         manifest
+    static/css/app.5916f702e139bfa1ab6b50b24cdd159f.css     290 kB       1  [emitted]  [big]  app
+static/css/app.5916f702e139bfa1ab6b50b24cdd159f.css.map     428 kB          [emitted]
+           static/js/vendor.c19c679480ce43275907.js.map    3.67 MB       0  [emitted]         vendor
+              static/js/app.ea10af783a7f47907129.js.map     202 kB       1  [emitted]         app
+         static/js/manifest.2ae2e69a05c33dfc65f8.js.map    4.97 kB       2  [emitted]         manifest
+                                             index.html  514 bytes          [emitted]
+
+  Build complete.
+
+  Tip: built files are meant to be served over an HTTP server.
+  Opening index.html over file:// won't work.
+
+提示： 生成的文件必须放在http服务器下才能工作， 直接打开index.html，不能工作
